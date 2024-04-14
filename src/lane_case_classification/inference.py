@@ -29,7 +29,7 @@ def predict(args):
 
     image_paths = [os.path.join(args.infer_dir, f) for f in os.listdir(args.infer_dir) if os.path.isfile(os.path.join(args.infer_dir, f))]
     dataset = CustomImageDataset(image_paths=image_paths, transform=transform)
-    loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False)
+    loader = DataLoader(dataset, batch_size=1, shuffle=False)
 
     net = models.resnet18(pretrained=True)
     num_ftrs = net.fc.in_features
@@ -49,7 +49,6 @@ def main():
     parser = argparse.ArgumentParser(description="Inference with trained model")
     parser.add_argument("--infer_dir", type=str, required=True, help="Path to inference images folder")
     parser.add_argument("--model_path", type=str, required=True, help="Path to the trained model")
-    parser.add_argument("--batch_size", type=int, default=4, help="Batch size for inference (default: 4)")
     parser.add_argument("--img_size", type=int, default=224, help="Image size (default: 224)")
     parser.add_argument("--num_classes", type=int, required=True, help="Number of classes")
     parser.add_argument("--output_file", type=str, required=True, help="Path to output text file for inference results")
