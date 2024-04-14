@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Road-lanes classification 
 
 ## Requirements
@@ -14,3 +15,6 @@ rye sync
 
 ## Usage
 
+=======
+# lane-case-classification
+>>>>>>> origin/main
