@@ -1,0 +1,31 @@
+[project]
+name = "lane-case-classification"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "waroron", email = "ex.gonw122@gmail.com" }
+]
+dependencies = [
+    "torch>=2.2.2",
+    "torchvision>=0.17.2",
+    "black>=24.4.0",
+    "isort>=5.13.2",
+    "jupyter>=1.0.0",
+    "jupyterlab>=4.1.6",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lane_case_classification"]
