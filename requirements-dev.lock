@@ -316,6 +316,8 @@ tornado==6.4
     # via jupyterlab
     # via notebook
     # via terminado
+tqdm==4.66.2
+    # via lane-case-classification
 traitlets==5.14.2
     # via comm
     # via ipykernel
